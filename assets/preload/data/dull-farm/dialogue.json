@@ -3,10 +3,10 @@
 		{
 			"sound": "",
 			"speed": 0.05,
-			"portrait": "whiteog",
+			"portrait": "bambi",
 			"boxState": "normal",
 			"expression": "talk",
-			"text": "Not again..."
+			"text": "Not you again..."
 		},
 		{
 			"sound": "brocken",
@@ -19,7 +19,7 @@
 		{
 			"sound": "",
 			"speed": 0.05,
-			"portrait": "whiteog",
+			"portrait": "bambi",
 			"boxState": "normal",
 			"expression": "talk",
 			"text": "..."
