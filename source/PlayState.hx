@@ -1126,8 +1126,21 @@ class PlayState extends MusicBeatState
 									});
 							}
 						}
-					}
-
+					}	
+				case 'dull-house' | 'dull-farm':
+			                new FlxTimer().start(1.5, function(tmr:FlxTimer)
+				        {
+						var path:String = Paths.json(Paths.formatToSongPath(PlayState.SONG.song) + '/dialogue');
+						var shit:DialogueFile = DialogueBoxPsych.parseDialogue(path);
+										
+						boyfriend.x = x;
+						dad.visible = true;
+						FlxTween.tween(camHUD, {alpha: 1}, 0.5);
+						new FlxTimer().start(1.5, function(tmr:FlxTimer)
+						{
+							startDialogue(shit);
+						});
+					});
 				default:
 					startCountdown();
 			}
@@ -2023,6 +2036,20 @@ class PlayState extends MusicBeatState
 	function startNextDialogue() {
 		dialogueCount++;
 		if(SONG.song.toLowerCase()=='dull-fuse'){
+			if(dialogueCount==1){
+				boyfriend.playAnim("switch", true);
+				boyfriend.animation.pause();
+				FlxG.sound.play(Paths.sound("brocken"));
+			}	
+		}
+		if(SONG.song.toLowerCase()=='dull-house'){
+			if(dialogueCount==1){
+				boyfriend.playAnim("switch", true);
+				boyfriend.animation.pause();
+				FlxG.sound.play(Paths.sound("brocken"));
+			}	
+		}
+		if(SONG.song.toLowerCase()=='dull-farm'){
 			if(dialogueCount==1){
 				boyfriend.playAnim("switch", true);
 				boyfriend.animation.pause();
